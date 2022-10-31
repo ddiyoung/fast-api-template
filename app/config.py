@@ -1,15 +1,17 @@
 from dotenv import load_dotenv
 import os
+from pydantic import BaseSettings
 
-load_dotenv()
 
-config = {
-    "port": os.environ.get("PORT"),
-    "mysql_host": os.environ.get("MYSQL_HOST"),
-    "mysql_port": os.environ.get("MYSQL_PORT"),
-    "mysql_user": os.environ.get("MYSQL_USER"),
-    "mysql_password": os.environ.get("MYSQL_PASSWORD"),
-    "mysql_database": os.environ.get("MYSQL_DATABASE"),
-}
+class Settings(BaseSettings):
+    app_name: str = "Awesome API"
+    admin_email: str = "wsw3998@naver.com"
+    items_per_user: int = 50
 
-print(config['port'])
+    class Config:
+        env_file = ".env"
+
+
+settings = Settings(_env_file=f'{os.getenv("")}.env')
+
+print(settings)
