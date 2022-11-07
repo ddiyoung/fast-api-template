@@ -1,14 +1,8 @@
-from typing import List, Optional
-
 from fastapi import Depends
-from sqlalchemy.orm import Session, lazyload
 
-from configs.Database import (
-    get_db_connection,
-)
 from models.UserModel import User
 from repositories.UserRepository import UserRepository
-from schemas.pydantic.User import UserSchema
+#from schemas.pydantic.User import UserSchema
 
 
 class UserService:
@@ -18,4 +12,4 @@ class UserService:
         self.userRepository = userRepository
 
     def get(self, user_id: int) -> User:
-        return self.userRepository.get(User(id=user_id))
+        return self.userRepository.get(User(u_id=user_id))

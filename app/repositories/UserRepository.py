@@ -16,5 +16,5 @@ class UserRepository:
     def get(self, user: User) -> User:
         return self.db.get(
             User,
-            user.id,
+            user.u_id,
         )
