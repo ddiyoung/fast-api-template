@@ -9,13 +9,21 @@ class ErrorInfoModel:
     def __repr__(self):
         return f'code:{self.code},message:{self.message}'
 
+    def normalize(self):
+        return {
+            'error_code': self.code,
+            'error_message': self.message
+        }
+
 
 class ErrorInfoContainer:
     # General errors
-    unhandled_error = ErrorInfoModel(code=1, message='Internal server error')
-    could_not_get_excepted_response = ErrorInfoModel(code=2, message='Could not get expected response')
+    internal_server_error = ErrorInfoModel(code=500, message='Internal server error')
+    could_not_get_excepted_response = ErrorInfoModel(code=400, message='Could not get expected response')
+    unauthorized_response = ErrorInfoModel(code=401, message='Unauthorized')
     model_validation_error = ErrorInfoModel(code=3, message='Model validation error')
-    not_found_error = ErrorInfoModel(code=4, message='Not found')
+    not_found_error = ErrorInfoModel(code=404, message='Not found')
+    forbidden_error = ErrorInfoModel(code=403, message="Forbidden")
 
     # Custom errors
     todo_not_found_error = ErrorInfoModel(code=101, message='Todo not found')
