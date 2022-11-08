@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from app.routers import User
 
+
 def create_app():
     app = FastAPI()
 
