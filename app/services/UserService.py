@@ -4,7 +4,6 @@ from app.models.UserModel import User
 from app.repositories.UserRepository import UserRepository
 
 
-
 class UserService:
     UserRepository: UserRepository
 

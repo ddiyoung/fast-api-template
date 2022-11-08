@@ -30,5 +30,5 @@ class ErrorInfoContainer:
 
 
 class ErrorResponseModel(BaseModel):
-    error_code: int = None
+    status: int = None
     error_message: str = None
