@@ -1,10 +1,10 @@
 from typing import List, Optional
 from fastapi import Depends
 from sqlalchemy.orm import Session
-from configs.Database import (
+from app.configs.Database import (
     get_db_connection
 )
-from models.UserModel import User
+from app.models.UserModel import User
 
 
 class UserRepository:

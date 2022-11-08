@@ -1,8 +1,8 @@
 from fastapi import Depends
 
-from models.UserModel import User
-from repositories.UserRepository import UserRepository
-#from schemas.pydantic.User import UserSchema
+from app.models.UserModel import User
+from app.repositories.UserRepository import UserRepository
+
 
 
 class UserService:

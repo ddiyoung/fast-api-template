@@ -6,7 +6,7 @@ from sqlalchemy import (
 )
 
 
-from models.BaseModel import EntityMeta
+from app.models.BaseModel import EntityMeta
 
 
 class User(EntityMeta):
