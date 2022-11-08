@@ -2,10 +2,10 @@ from pydantic import BaseModel
 
 
 class UserPostRequestSchema(BaseModel):
-    user_id: int
+    user_id: str
 
 
 class UserSchema(UserPostRequestSchema):
     user_name: str
     user_department: str
-    user_auth: int
+    user_auth: str
