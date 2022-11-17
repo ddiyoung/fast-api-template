@@ -2,7 +2,6 @@ from fastapi import APIRouter, Depends, status
 from app.schemas.pydantic.User import UserSchema
 from app.services.UserService import UserService
 from app.utils.error.error_response import ErrorResponseModel, ErrorResponse
-from app.ml.load.LogisticModel1 import model
 
 UserRouter = APIRouter(
     prefix="/user", tags=['user']
